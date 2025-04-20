@@ -1,7 +1,8 @@
 export const Posts = () => {
   return (
-    <div>
-      <p>Posts</p>
-    </div>
+    <ul className="list-group">
+      <li className="list-group-item">hello world</li>
+      <li className="list-group-item">hello world</li>
+    </ul>
   );
 };
