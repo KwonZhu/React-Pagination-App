@@ -1,12 +1,105 @@
-# React + Vite
+# React Pagination App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-19-blue)
+![Axios](https://img.shields.io/badge/Axios-1.8.4-green)
+![Vite](https://img.shields.io/badge/Vite-6.3.1-orange)
 
-Currently, two official plugins are available:
+A clean and efficient React application demonstrating client-side pagination using the JSONPlaceholder API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- 📝 Fetches and displays blog posts from JSONPlaceholder
+- 🔢 Implements client-side pagination (10 posts per page)
+- ⏳ Loading state handling during API requests
+- 🔵 Active page highlighting in pagination controls
+- 🧩 Modular component architecture
+- 📱 Responsive design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies
+
+- React 19 (with Hooks)
+- Axios for HTTP requests
+- Vite build tool
+- Plain CSS (no external CSS libraries)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/KwonZhu/React-Pagination-App.git
+   ```
+
+2. Navigate to project directory:
+
+   ```bash
+   cd React-Pagination-App
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start development server:
+
+   ```bash
+   npm run dev
+   ```
+
+## Project Structure
+
+    src/
+    ├── components/
+    │ ├── Pagination.jsx # Pagination controls component
+    │ └── Posts.jsx # Posts list component
+    ├── App.jsx # Main application component
+    ├── main.jsx # Application entry point
+    └── App.css # Global styles
+
+## Implementation Highlights
+
+### Pagination Logic
+
+The app implements efficient client-side pagination:
+
+javascript
+
+```
+// Calculate posts to show for current page
+const indexOfLastPost = currentPage \* postsPerPage;
+const indexOfFirstPost = indexOfLastPost - postsPerPage;
+const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+```
+
+### Components
+
+#### Posts Component:
+
+- Displays paginated posts list
+- Shows loading state during API fetch
+- Clean list presentation with CSS styling
+
+#### Pagination Component:
+
+- Dynamically generates page numbers
+- Highlights active page
+- Clean button styling with hover effects
+
+## Available Scripts
+
+- **`npm run dev`**: Starts development server
+
+- **`npm run build`**: Creates production build
+
+- **`npm run lint`**: Runs ESLint for code quality
+
+- **`npm run preview`**: Previews production build
+
+## API Reference
+
+This application uses the free JSONPlaceholder API:
+
+- Endpoint: `https://jsonplaceholder.typicode.com/posts`
+- Returns: Array of 100 blog post objects
