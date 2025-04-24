@@ -1,8 +1,8 @@
 # React Pagination App
 
-![React](https://img.shields.io/badge/React-19-blue)
-![Axios](https://img.shields.io/badge/Axios-1.8.4-green)
-![Vite](https://img.shields.io/badge/Vite-6.3.1-orange)
+![React](https://img.shields.io/badge/React-^19.0.0-blue)
+![Axios](https://img.shields.io/badge/Axios-^1.8.4-green)
+![Vite](https://img.shields.io/badge/Vite-^6.3.1-orange)
 
 A clean and efficient React application demonstrating client-side pagination using the JSONPlaceholder API.
 
@@ -43,20 +43,21 @@ A clean and efficient React application demonstrating client-side pagination usi
    ```
 
 4. Start development server:
-
    ```bash
    npm run dev
    ```
 
 ## Project Structure
 
-    src/
-    ├── components/
-    │ ├── Pagination.jsx # Pagination controls component
-    │ └── Posts.jsx # Posts list component
-    ├── App.jsx # Main application component
-    ├── main.jsx # Application entry point
-    └── App.css # Global styles
+```
+src/
+├── components/
+│   ├── Pagination.jsx  # Pagination controls component
+│   └── Posts.jsx       # Posts list component
+├── App.jsx             # Main application component
+├── main.jsx            # Application entry point
+└── App.css             # Global styles
+```
 
 ## Implementation Highlights
 
@@ -64,11 +65,9 @@ A clean and efficient React application demonstrating client-side pagination usi
 
 The app implements efficient client-side pagination:
 
-javascript
-
-```
+```javascript
 // Calculate posts to show for current page
-const indexOfLastPost = currentPage \* postsPerPage;
+const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
 const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 ```
@@ -90,16 +89,13 @@ const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 ## Available Scripts
 
 - **`npm run dev`**: Starts development server
-
 - **`npm run build`**: Creates production build
-
 - **`npm run lint`**: Runs ESLint for code quality
-
 - **`npm run preview`**: Previews production build
 
 ## API Reference
 
-This application uses the free JSONPlaceholder API:
+This application uses the free [JSONPlaceholder API](https://jsonplaceholder.typicode.com):
 
 - Endpoint: `https://jsonplaceholder.typicode.com/posts`
 - Returns: Array of 100 blog post objects

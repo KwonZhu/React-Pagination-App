@@ -39,10 +39,10 @@ function App() {
       <h1 className="text-primary">My Blog</h1>
       <Posts currentPosts={currentPosts} loading={loading} />
       <Pagination
-        paginate={paginate}
+        paginate={paginate} // callback to change currentPage
         postsPerPage={postsPerPage}
         currentPage={currentPage}
-        totalPosts={posts.length}
+        totalPosts={posts.length} // total posts for calculating maximum pageNumber
       />
     </div>
   );
