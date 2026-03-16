@@ -67,8 +67,8 @@ The app implements efficient client-side pagination:
 
 ```javascript
 // Calculate posts to show for current page
-const indexOfLastPost = currentPage * postsPerPage;
-const indexOfFirstPost = indexOfLastPost - postsPerPage;
+const indexOfFirstPost = (currentPage - 1) * postsPerPage;
+const indexOfLastPost = indexOfFirstPost + postsPerPage;
 const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 ```
 

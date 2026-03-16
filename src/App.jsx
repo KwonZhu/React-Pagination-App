@@ -26,9 +26,9 @@ function App() {
   }, []);
 
   // Slice the array to show only the posts for the current page
-  // For example, on page 1, indexOfLastPost=10, indexOfFirstPost=0, currentPosts=posts[0...9]. posts[10...19] for page 2
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  // For example, on page 1, indexOfFirstPost=0, indexOfLastPost=10, currentPosts=posts[0...9]. posts[10...19] for page 2
+  const indexOfFirstPost = (currentPage - 1) * postsPerPage;
+  const indexOfLastPost = indexOfFirstPost + postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   // changed currentPage by Pagination component, then trigger re-calculation of currentPosts
